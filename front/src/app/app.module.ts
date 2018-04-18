@@ -14,7 +14,10 @@ import { LandingComponent } from './components/landing/landing.component';
 import { LoginComponent } from './components/login/login.component';
 
 import { AuthService } from './services/auth.service';
+import { DatauserService } from './services/datauser.service';
+
 import { HomeComponent } from './components/home/home.component';
+import { RegistroComponent } from './components/registro/registro.component';
 
 
 @NgModule({
@@ -22,7 +25,8 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     LandingComponent,
    LoginComponent,
-   HomeComponent
+   HomeComponent,
+   RegistroComponent
   ],
   imports: [
     BrowserModule,
@@ -31,11 +35,11 @@ import { HomeComponent } from './components/home/home.component';
     RouterModule.forRoot([
       { path: "", component: LandingComponent },
       { path: "login", component: LoginComponent},
-      { path: "player/home", component: HomeComponent}
-
+      { path: "user/home", component: HomeComponent},
+      { path: "register", component: RegistroComponent}
     ])
   ],
-  providers: [AuthService],
+  providers: [AuthService,DatauserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
